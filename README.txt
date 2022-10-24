@@ -4,6 +4,7 @@ Hola! Si estás aquí, probablemente pensarás que este proyecto no tiene mucho 
 Eso se debe a que es el proyecto que hice mientras aprendía a usar Django!
 Probablemente haga otro proyecto pronto que **sí** tenga sentido
 Así que, por favor, no me juzgues por este desastre!
+
 <-------------------------------------------------------------------------------------------------------------------------->
 
 ENGLISH:

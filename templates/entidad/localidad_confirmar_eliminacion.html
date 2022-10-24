@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Confirmar{% endblock %}
+{% block titulo_principal %}Eliminar localidad{% endblock %}
+{% block principal %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <h4>¿Está seguro que desea eliminar la localidad <strong>{{ form.nombre }}</strong>?</h4>
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+{% endblock %}

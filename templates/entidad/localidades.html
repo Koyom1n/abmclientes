@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Clientes{% endblock %}
+{% block titulo_secundario %}Lista de localidades{% endblock %}
+{% block principal %}
+<table class="table table-light">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Código postal</th>
+            <th>Provincia</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    {% for localidad in localidades %}
+        <tr>
+            <td>{{ localidad.nombre }}</td>
+            <td>{{ localidad.cp }}</td>
+            <td>{{ localidad.provincia }}</td>
+            <td><a href="{% url 'modificar_localidad' localidad.id %}"><img src="{% static 'img/Editar_25.png' %}" alt="Modificar"></a></td>
+            <td><a href="{% url 'eliminar_localidad' localidad.id %}"><img class="icono-lista" src="{% static 'img/Eliminar.png' %}" alt="Eliminar"></a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

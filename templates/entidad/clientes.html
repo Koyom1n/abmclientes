@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Clientes{% endblock %}
+{% block titulo_secundario %}Lista de clientes{% endblock %}
+{% block principal %}
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.edad }}</td>
+                <td><a href="{% url 'modificar_cliente' cliente.id %}"><img src="{% static 'img/Editar_25.png' %}" alt="Modificar"></a></td>
+                <td><a href="{% url 'eliminar_cliente' cliente.id %}"><img class="icono-lista" src="{% static 'img/Eliminar.png' %}" alt="Eliminar"></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

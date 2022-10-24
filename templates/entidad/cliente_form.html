@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %} Ingreso de clientes {% endblock %}
+{% block titulo_principal %}Carga de clientes {% endblock %}
+{% block principal %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}
